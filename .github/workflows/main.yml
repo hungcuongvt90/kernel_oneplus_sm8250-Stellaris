@@ -67,10 +67,10 @@ jobs:
         export PATH=$(pwd)/clang/bin/:$PATH
         make $KERNEL_CMDLINE $KERNEL_DEFCONFIG CC="ccache clang"
         make $KERNEL_CMDLINE CC="ccache clang" -j$(nproc --all)
-        cp out/arch/arm64/boot/Image AnyKernel3
+        cp out/arch/arm64/boot/Image.gz AnyKernel3
 
     - name: Upload Kernel-SU
       uses: actions/upload-artifact@v3
       with:
-        name: xin0aini-kernel-SU-${{ steps.get_time.outputs.TIME }}
+        name: xin0aini-Stellaris-kernel-SU-${{ steps.get_time.outputs.TIME }}
         path: "AnyKernel3/*"
