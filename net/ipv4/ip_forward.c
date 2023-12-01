@@ -134,7 +134,7 @@ int ip_forward(struct sk_buff *skb)
 	iph = ip_hdr(skb);
 
 	/* Decrease ttl after skb cow done */
-	ip_decrease_ttl(iph);
+	// ip_decrease_ttl(iph);
 
 	/*
 	 *	We now generate an ICMP HOST REDIRECT giving the route
